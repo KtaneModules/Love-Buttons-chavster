@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.4964128, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &21036713
+--- !u!1001 &125451901
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,27 +152,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1257106365364922, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15, type: 2}
-      propertyPath: m_Name
-      value: LoveButtons
-      objectReference: {fileID: 0}
-    - target: {fileID: 4068269548869026, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4620665448293010, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 4068065431170320, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 114689713973379562, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15,
+    - target: {fileID: 102790728255107834, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15,
         type: 2}
-      propertyPath: DisplayText
-      value: 
-      objectReference: {fileID: 1843064670}
+      propertyPath: m_Text
+      value: 'We should make
+
+        a reli- no don''t'
+      objectReference: {fileID: 0}
+    - target: {fileID: 102790728255107834, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15,
+        type: 2}
+      propertyPath: m_LineSpacing
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 102790728255107834, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15,
+        type: 2}
+      propertyPath: m_CharacterSize
+      value: 0.00225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15, type: 2}
   m_IsPrefabParent: 0
@@ -364,8 +360,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
   m_IsPrefabParent: 0
---- !u!102 &1843064670 stripped
-TextMesh:
-  m_PrefabParentObject: {fileID: 102790728255107834, guid: 85a2c623b85c45f4fbcbd5bedc7a4b15,
-    type: 2}
-  m_PrefabInternal: {fileID: 21036713}
