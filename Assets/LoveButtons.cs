@@ -89,7 +89,7 @@ public class LoveButtons : MonoBehaviour
                 break;
 
             case 3:
-                IsAnswerYes = Bomb.GetSerialNumberLetters().Any(x => "AEIOU".Contains(x));
+                IsAnswerYes = !Bomb.GetSerialNumberLetters().Any(x => "AEIOU".Contains(x));
                 break;
 
             case 4:
