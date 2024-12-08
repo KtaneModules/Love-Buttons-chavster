@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 33932488005878320}
   - component: {fileID: 23607326729506256}
   - component: {fileID: 114662872129988598}
+  - component: {fileID: 114205043259024018}
   m_Layer: 0
   m_Name: No!
   m_TagString: Untagged
@@ -210,6 +211,7 @@ GameObject:
   - component: {fileID: 4446594093277114}
   - component: {fileID: 33567260465967250}
   - component: {fileID: 23541280624476622}
+  - component: {fileID: 114002541617542404}
   m_Layer: 0
   m_Name: Display
   m_TagString: Untagged
@@ -246,6 +248,7 @@ GameObject:
   - component: {fileID: 33453422697260762}
   - component: {fileID: 23628951135451726}
   - component: {fileID: 114552077830088512}
+  - component: {fileID: 114364586032830702}
   m_Layer: 0
   m_Name: Yes!
   m_TagString: Untagged
@@ -784,10 +787,12 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1719704703625446}
-  m_Text: Do you love me?
+  m_Text: 'We should make
+
+    a reli- no don''t'
   m_OffsetZ: 0
-  m_CharacterSize: 0.0025
-  m_LineSpacing: 1
+  m_CharacterSize: 0.00225
+  m_LineSpacing: 0.85
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
@@ -798,6 +803,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114002541617542404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779143531143036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114075300238952122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -825,6 +843,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HighlightScale: {x: 1, y: 1, z: 1}
   OutlineAmount: 0
+--- !u!114 &114205043259024018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1125268208117592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114324929634061078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -849,6 +880,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HighlightScale: {x: 1, y: 1, z: 1}
   OutlineAmount: 0
+--- !u!114 &114364586032830702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891791341616538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114386714698474336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -976,11 +1020,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6121698d53055a46bc06b4583486331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Module: {fileID: 114075300238952122}
   Bomb: {fileID: 114535334885472574}
   Audio: {fileID: 114401628753956588}
-  Button:
-  - {fileID: 114552077830088512}
+  Buttons:
   - {fileID: 114662872129988598}
+  - {fileID: 114552077830088512}
   DisplayText: {fileID: 102790728255107834}
 --- !u!114 &114713981188579248
 MonoBehaviour:
@@ -994,7 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - GUI/KT 3D Text
+  - GUI/KT 3D Text Diffuse
 --- !u!114 &114723812890398310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1007,7 +1052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - GUI/KT 3D Text
+  - GUI/KT 3D Text Diffuse
 --- !u!114 &114989358500464902
 MonoBehaviour:
   m_ObjectHideFlags: 1

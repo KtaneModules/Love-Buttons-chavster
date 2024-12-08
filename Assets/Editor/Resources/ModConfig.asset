@@ -11,13 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: template
-  title: Template
-  author: 
-  description: "[INSERT FLAVOR TEXT HERE]\n\n[INSERT SOLVING DESCRIPTION HERE]\n\n[INSERT
-    POTENTIAL CREDITS HERE]\n\nThe manual can be found in the manuals folder of the
-    game or at ktane.timwi.de.\n\r\nContact Fartlicker777#9169 on Discord if there
-    are any bugs."
-  version: 
+  id: LoveButtons.ron
+  title: Love Buttons
+  author: chavster
+  description: "What!? A module made by an obsessed dork? I would never!\n\n1.00\nMODULE
+    RELEASE!\n1.01\n- Fixed \"Do you want to kiss?\"'s solve condition being inverted
+    on the manual\n- Removed \"Have you heard the word?\"\n1.02\n- Changed the condition
+    of \"Are you ready for the luncheon?\"\n- Changed the condition of \"Are you also
+    cold?\"\n\nThank you to the KTANE Discord for helping me make this, Deaf and Blan
+    for the tutorial that helped me get started, Mar for their assistance during making
+    the module, choko and Konoko for playtesting and my girlfriend GhostSalt for helping
+    me out with most of the code!\n\nThe manual can be found in the manuals folder
+    of the game or at ktane.timwi.de.\n\r\nContact chavster on Discord if there are
+    any bugs, or friend request on Steam."
+  version: 1.02
   outputFolder: build
   previewImage: {fileID: 0}

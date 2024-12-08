@@ -25,7 +25,6 @@ public class LoveButtons : MonoBehaviour
 "Do you want\nto walk?",
 "Are you ready for\nthe luncheon?",
 "Do you have\nany plushies?",
-"Have you heard\n the word?",
 "Are you\nalso cold?"  };
     private int ChosenKeyword;
     private bool IsAnswerYes;
@@ -42,6 +41,7 @@ public class LoveButtons : MonoBehaviour
 
         ChosenKeyword = Rnd.Range(0, Keywords.Length);
         DisplayText.text = Keywords[ChosenKeyword];
+        Debug.LogFormat("[Love Buttons #{0}] The displayed text is: {1}", _moduleId, DisplayText.text.Replace('\n', ' '));
         for (int i = 0; i < Buttons.Length; i++)
         {
             int x = i;
@@ -52,6 +52,7 @@ public class LoveButtons : MonoBehaviour
     void Start()
     {
         Calculate();
+        Debug.LogFormat("[Love Buttons #{0}] This means that you should press {1}.", _moduleId, IsAnswerYes? "YES!" : "NO!");
     }
 
     void Activate()
@@ -65,11 +66,14 @@ public class LoveButtons : MonoBehaviour
         {
             Calculate();
             PreviousStrikes = Bomb.GetStrikes();
+
+            Debug.LogFormat("[Love Buttons #{0}] The number of strikes has changed! The new answer is {1}!", _moduleId, IsAnswerYes ? "YES!" : "NO!");
         }
     }
 
     void Calculate()
     {
+
         switch (ChosenKeyword)
         {
             case 0:
@@ -89,7 +93,7 @@ public class LoveButtons : MonoBehaviour
                 break;
 
             case 4:
-                IsAnswerYes = Bomb.GetStrikes() % 2 == 0;
+                IsAnswerYes = Bomb.GetStrikes() % 2 == 1;
                 break;
 
             case 5:
@@ -97,20 +101,16 @@ public class LoveButtons : MonoBehaviour
                 break;
 
             case 6:
-                IsAnswerYes = Bomb.GetBatteryHolderCount() % 2 == 1;
+                IsAnswerYes = Bomb.GetIndicators().Count() >= 3;
                 break;
             case 7:
                 var indsConcatenated = Bomb.GetOnIndicators().Join("");
                 IsAnswerYes = "CHAV".All(x => indsConcatenated.Contains(x)) || "SALT".All(x => indsConcatenated.Contains(x));
                 break;
             case 8:
-                IsAnswerYes = Bomb.GetIndicators().Any(x => "HAMS".Contains(x));
-                break;
-            case 9:
-
                 IsAnswerYes = Bomb.GetOnIndicators().Count() >= 2;
                 break;
-
+            
 
         }
     }
@@ -128,10 +128,12 @@ public class LoveButtons : MonoBehaviour
         if ((pos == 0 && !IsAnswerYes) || (pos == 1 && IsAnswerYes))
         {
             Module.HandlePass();
+            Debug.LogFormat("[Love Buttons #{0}] You pressed {1}, which was correct. Module solved! You're winner!", _moduleId, pos == 1 ? "YES!" : "NO!");
         }
         else
         {
             Module.HandleStrike();
+            Debug.LogFormat("[Love Buttons #{0}] You pressed {1}, which was incorrect. Strike! You're loser!", _moduleId, pos == 1 ? "YES!" : "NO!");
         }
     }
     private IEnumerator ButtonAnim(int pos, float duration = 0.075f)
@@ -171,16 +173,29 @@ public class LoveButtons : MonoBehaviour
 
 
 #pragma warning disable 414
-    private readonly string TwitchHelpMessage = @"Use !{0} to do something.";
+    private readonly string TwitchHelpMessage = @"Use '!{0} YES/NO' to press YES! or NO!.";
 #pragma warning restore 414
 
     IEnumerator ProcessTwitchCommand(string Command)
     {
+        Command = Command.ToLowerInvariant();
+        if (Command != "yes" && Command != "no")
+        {
+            yield return "sendtochaterror Invalid command.";
+            yield break;
+        }
         yield return null;
+        if (Command == "yes")
+        {
+            Buttons[1].OnInteract();
+        }
+        else Buttons[0].OnInteract();
     }
 
     IEnumerator TwitchHandleForcedSolve()
     {
         yield return null;
+        Buttons[IsAnswerYes ? 1 : 0].OnInteract();
     }
+    
 }
