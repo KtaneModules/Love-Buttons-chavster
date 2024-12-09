@@ -52,7 +52,7 @@ public class LoveButtons : MonoBehaviour
     void Start()
     {
         Calculate();
-        Debug.LogFormat("[Love Buttons #{0}] This means that you should press {1}.", _moduleId, IsAnswerYes? "YES!" : "NO!");
+        Debug.LogFormat("[Love Buttons #{0}] This means that you should press {1}.", _moduleId, IsAnswerYes? "YES" : "NO");
     }
 
     void Activate()
